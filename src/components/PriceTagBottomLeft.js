@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { COLORS } from "../../assets/consts/COLORS";
 
-const PriceTag = ({ price = 400 }) => {
+const PriceTagBottomLeft = ({ price = 400 }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.priceText}>$ {price} / day</Text>
@@ -10,13 +10,13 @@ const PriceTag = ({ price = 400 }) => {
   );
 };
 
-export default PriceTag;
+export default PriceTagBottomLeft;
 
 const styles = StyleSheet.create({
   container: {
     position: "absolute",
-    top: 50,
-    right: 20,
+    bottom: 40,
+    left: 20,
     minWidth: 100,
     height: 40,
     borderRadius: 20,

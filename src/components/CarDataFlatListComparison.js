@@ -10,16 +10,12 @@ import React, { useContext } from "react";
 import { CarData } from "../../assets/data/CarData";
 import { COLORS } from "../../assets/consts/COLORS";
 import { FontAwesome } from "@expo/vector-icons";
-import { FilteringService } from "../service/FilteringService";
-import { useNavigation } from "@react-navigation/native";
+import { ComparisonCarService } from "../service/ComparisonCarService";
 
-const CarDataFlatList = () => {
-  const navigation = useNavigation();
-  const { filteredList } = useContext(FilteringService);
+const CarDataFlatListComparison = () => {
+  const { addNewCarForComparison } = useContext(ComparisonCarService);
   const renderItem = ({ item, index }) => (
-    <TouchableWithoutFeedback
-      onPress={() => navigation.navigate("DetailsScreen", item)}
-    >
+    <TouchableWithoutFeedback onPress={() => addNewCarForComparison(item)}>
       <View
         style={[styles.mainContainer, { marginLeft: index === 0 ? 30 : 0 }]}
       >
@@ -46,7 +42,7 @@ const CarDataFlatList = () => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={filteredList ? filteredList : CarData}
+        data={CarData}
         renderItem={renderItem}
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -56,15 +52,16 @@ const CarDataFlatList = () => {
   );
 };
 
-export default CarDataFlatList;
+export default CarDataFlatListComparison;
 
 const styles = StyleSheet.create({
   container: {
     height: 300,
+    marginTop: 40,
   },
   mainContainer: {
     width: 200,
-    height: 250,
+    height: 180,
     backgroundColor: COLORS.white,
     marginHorizontal: 35,
     borderRadius: 15,
@@ -73,7 +70,7 @@ const styles = StyleSheet.create({
   image: {
     width: 200,
     height: 200,
-    top: -20,
+    top: -50,
   },
   priceContainer: {
     alignSelf: "flex-end",
@@ -105,10 +102,10 @@ const styles = StyleSheet.create({
     letterSpacing: 3,
   },
   nameText: {
-    bottom: 40,
     fontSize: 16,
     fontWeight: "700",
     letterSpacing: 1.3,
+    bottom: 100,
   },
   ratingText: {
     marginLeft: 3,

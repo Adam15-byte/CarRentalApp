@@ -4,13 +4,16 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import SearchScreen from "./src/screens/SearchScreen";
 import { FilteringServiceProvider } from "./src/service/FilteringService";
 import { Navigation } from "./Navigation";
+import { ComparisonCarServiceProvider } from "./src/service/ComparisonCarService";
 
 export default function App() {
   return (
     <>
-      <FilteringServiceProvider>
-        <Navigation />
-      </FilteringServiceProvider>
+      <ComparisonCarServiceProvider>
+        <FilteringServiceProvider>
+          <Navigation />
+        </FilteringServiceProvider>
+      </ComparisonCarServiceProvider>
     </>
   );
 }

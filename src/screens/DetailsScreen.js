@@ -16,6 +16,8 @@ import { backgroundColor } from "react-native/Libraries/Components/View/ReactNat
 import CarParametersBarList from "../components/CarParametersBarList";
 import PickupMap from "../components/PickupMap";
 import PriceTag from "../components/PriceTag";
+import BigButton from "../components/BigButton";
+import BackButton from "../components/BackButton";
 
 const { width, height } = Dimensions.get("window");
 
@@ -83,12 +85,8 @@ const DetailsScreen = ({ route }) => {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.imageContainer}>
-        <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
-          <View style={styles.backButton}>
-            <MaterialIcons name="keyboard-arrow-left" size={20} color="black" />
-          </View>
-        </TouchableWithoutFeedback>
-        <PriceTag />
+        <BackButton />
+        <PriceTag price={route.params.stats.price} />
         <Animated.FlatList
           data={route.params.stats.image}
           renderItem={renderItemImage}
@@ -124,6 +122,15 @@ const DetailsScreen = ({ route }) => {
           <Text style={styles.parametersHeadline}>Pickup Points</Text>
           <PickupMap />
         </View>
+        <View style={styles.bottomButtonsContainer}>
+          <BigButton />
+          <Text
+            style={styles.compareText}
+            onPress={() => navigation.navigate("CompareScreen", { route })}
+          >
+            Not sure? Compare against another car
+          </Text>
+        </View>
       </View>
     </View>
   );
@@ -146,22 +153,6 @@ const styles = StyleSheet.create({
   topImage: {
     width: width,
     height: "100%",
-  },
-  backButton: {
-    position: "absolute",
-    top: 50,
-    left: 30,
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: COLORS.white,
-    zIndex: 999,
-    shadowColor: COLORS.black,
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.3,
-    shadowRadius: 10,
-    alignItems: "center",
-    justifyContent: "center",
   },
   firstImageContainer: {
     width: width,
@@ -202,12 +193,23 @@ const styles = StyleSheet.create({
   statsContainer: {
     width: "100%",
     minHeight: 100,
-    top: 5,
   },
   parametersHeadline: {
     fontSize: 20,
     fontWeight: "700",
     letterSpacing: 1.1,
     marginLeft: 30,
+  },
+  bottomButtonsContainer: {
+    width: "100%",
+    height: 70,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 20,
+  },
+  compareText: {
+    marginTop: "auto",
+    fontSize: 14,
+    fontWeight: "600",
   },
 });
