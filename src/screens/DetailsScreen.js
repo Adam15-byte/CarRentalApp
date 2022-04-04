@@ -119,7 +119,7 @@ const DetailsScreen = ({ route }) => {
         </View>
         {/* Map with pick-up places */}
         <View style={styles.statsContainer}>
-          <Text style={styles.parametersHeadline}>Pickup Points</Text>
+          <Text style={styles.parametersHeadline}>Pick-up locations</Text>
           <PickupMap />
         </View>
         <View style={styles.bottomButtonsContainer}>
