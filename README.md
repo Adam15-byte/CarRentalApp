@@ -28,7 +28,7 @@ https://billionrent.com/en/locations/poland-en
 ![sample3](http://paulatrenuje.pl/wp-content/uploads/2022/04/Simulator-Screen-Shot-iPhone-11-2022-04-04-at-22.42.49.png)
 ![sample4](http://paulatrenuje.pl/wp-content/uploads/2022/04/Simulator-Screen-Shot-iPhone-11-2022-04-04-at-22.43.13.png)
 ![sample5](http://paulatrenuje.pl/wp-content/uploads/2022/04/Simulator-Screen-Shot-iPhone-11-2022-04-04-at-22.43.43.png)
-![sample6](http://paulatrenuje.pl/wp-content/uploads/2022/04/Simulator-Screen-Shot-iPhone-11-2022-04-04-at-22.43.52.png)
+![sample6](http://paulatrenuje.pl/wp-content/uploads/2022/04/simulatorlast.png)
 
 ## Further improvments
 * "DetailsScreen" remains empty for now
