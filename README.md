@@ -19,7 +19,7 @@ https://billionrent.com/en/locations/poland-en
 
 ## Technologies
 * React Native Drawer Navigation
-* React Native Reanimated
+* React Native Animated
 * Hooks: useRef, useEffect, useState, useContext, createContext
 
 ## Screenshots
